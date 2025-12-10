@@ -1,6 +1,6 @@
 # ALUNOS
-Bernnardo Seraphim Baptista de Oliveira
-Gustavo Amaral Bernardino
+- Bernnardo Seraphim Baptista de Oliveira
+- Gustavo Amaral Bernardino
 
 # 1. INTRODUÇÃO
 Este projeto consiste na implementação de um Ray Tracer básico em C++, desenvolvido para a disciplina de Computação Gráfica. O programa é capaz de carregar uma cena a partir de um arquivo de entrada, interpretar câmeras, luzes, pigmentos, materiais e geometrias (esferas e poliedros), e gerar uma imagem em formato PPM, aplicando os princípios fundamentais de rastreamento de raios: interseção, sombreamento, reflexão e refração.
