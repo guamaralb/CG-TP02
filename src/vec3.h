@@ -44,6 +44,5 @@ inline Vec3 normalize(const Vec3 &v) {
 }
 
 inline Vec3 reflect(const Vec3 &I, const Vec3 &N) {
-    // Reflexão especular: R = I - 2 (I·N) N
     return I - 2.0 * dot(I, N) * N;
 }

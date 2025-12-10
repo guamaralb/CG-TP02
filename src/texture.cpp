@@ -8,14 +8,14 @@ using std::endl;
 
 Vec3 Texture::sample(double u, double v) const {
     if (!valid || width <= 0 || height <= 0) {
-        return Vec3(1.0, 0.0, 1.0); // magenta (debug)
+        return Vec3(1.0, 0.0, 1.0);
     }
-    // wrap
+
     u -= std::floor(u);
     v -= std::floor(v);
 
     int x = static_cast<int>(u * (width  - 1));
-    int y = static_cast<int>((1.0 - v) * (height - 1)); // invertendo v
+    int y = static_cast<int>((1.0 - v) * (height - 1));
 
     x = std::max(0, std::min(width  - 1, x));
     y = std::max(0, std::min(height - 1, y));
@@ -53,7 +53,7 @@ Texture loadPPM(const std::string &filename) {
     f >> w; skip_comments();
     f >> h; skip_comments();
     f >> maxv;
-    f.get(); // comer um whitespace após maxv
+    f.get();
 
     tex.width = w;
     tex.height = h;

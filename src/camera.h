@@ -6,8 +6,7 @@ struct Camera {
     Vec3 center;
     Vec3 up_hint;
     double fovY;
-    // base ortonormal
-    Vec3 u, v, w; // w = forward, u = right, v = up
+    Vec3 u, v, w;
 };
 
 void buildCamera(Camera &cam);

@@ -62,14 +62,12 @@ static Vec3 shade(const Scene &scene, const Intersection &isect, const Ray &ray,
 
     Vec3 result(0,0,0);
 
-    // Luz ambiente: primeira luz do arquivo é a ambient
     if (!scene.lights.empty()) {
         const Light &amb = scene.lights[0];
         Vec3 ambColor = amb.color;
         result += fin.ka * (baseColor * ambColor);
     }
 
-    // Luzes pontuais
     for (size_t i = 1; i < scene.lights.size(); ++i) {
         const Light &Lsrc = scene.lights[i];
         Vec3 Lvec = Lsrc.position - isect.point;
@@ -94,7 +92,6 @@ static Vec3 shade(const Scene &scene, const Intersection &isect, const Ray &ray,
         result += diffuse + specular;
     }
 
-    // Reflexão
     if (fin.kr > 0.0 && depth < MAX_DEPTH) {
         Vec3 Rdir = reflect(ray.dir, N);
         Ray reflRay(isect.point + Rdir * EPS, Rdir);
@@ -102,7 +99,6 @@ static Vec3 shade(const Scene &scene, const Intersection &isect, const Ray &ray,
         result += fin.kr * reflColor;
     }
 
-    // Refração
     if (fin.kt > 0.0 && depth < MAX_DEPTH) {
         double eta = fin.ior;
         Vec3 Nn = N;

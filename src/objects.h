@@ -56,8 +56,8 @@ struct Sphere : public Object {
 };
 
 struct Plane {
-    Vec3 n; // normal
-    double d; // ax + by + cz + d = 0
+    Vec3 n;
+    double d;
 };
 
 struct Polyhedron : public Object {

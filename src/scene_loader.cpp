@@ -14,13 +14,11 @@ bool loadScene(const std::string &filename, Scene &scene) {
         return false;
     }
 
-    // 1) Camera
     in >> scene.camera.eye.x >> scene.camera.eye.y >> scene.camera.eye.z;
     in >> scene.camera.center.x >> scene.camera.center.y >> scene.camera.center.z;
     in >> scene.camera.up_hint.x >> scene.camera.up_hint.y >> scene.camera.up_hint.z;
     in >> scene.camera.fovY;
 
-    // 2) Luzes
     int numLights;
     in >> numLights;
     scene.lights.resize(numLights);
@@ -32,7 +30,6 @@ bool loadScene(const std::string &filename, Scene &scene) {
         scene.lights[i] = L;
     }
 
-    // 3) Pigmentos
     int numPig;
     in >> numPig;
     scene.pigments.resize(numPig);
@@ -63,7 +60,6 @@ bool loadScene(const std::string &filename, Scene &scene) {
         scene.pigments[i] = p;
     }
 
-    // 4) Acabamentos
     int numFin;
     in >> numFin;
     scene.finishes.resize(numFin);
@@ -73,7 +69,6 @@ bool loadScene(const std::string &filename, Scene &scene) {
         scene.finishes[i] = f;
     }
 
-    // 5) Objetos
     int numObj;
     in >> numObj;
     for (int i = 0; i < numObj; ++i) {

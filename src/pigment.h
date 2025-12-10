@@ -10,10 +10,10 @@ enum class PigmentType {
 
 struct Pigment {
     PigmentType type = PigmentType::SOLID;
-    Vec3 color1;   // para solid/checker
-    Vec3 color2;   // para checker
-    double size = 1.0; // tamanho do quadrado/cubo do checker
-    // texmap
+    Vec3 color1;
+    Vec3 color2;
+    double size = 1.0;
+    
     Texture tex;
     double P0[4] = {0,0,0,0};
     double P1[4] = {0,0,0,0};

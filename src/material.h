@@ -1,6 +1,6 @@
 #pragma once
 
 struct Finish {
-    double ka, kd, ks, alpha; // phong
-    double kr, kt, ior;       // reflexao, transmissao, indice
+    double ka, kd, ks, alpha;
+    double kr, kt, ior;
 };
